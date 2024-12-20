@@ -1,0 +1,242 @@
+*{
+    font-family: GeneralSans-MEDIUM;
+}
+
+
+html,body{
+    width: 100%;
+    height: 100%;
+}
+#main{
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    
+
+}
+#hero{width: 100%;
+    height: 100%;
+    background-color: #000;
+
+
+
+}
+#nav h4{
+    padding-left: 400px;
+
+}
+#nav {
+    padding-right: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+#nav a{
+    text-decoration: none;
+    color: rgb(248, 246, 246);
+ font-family: 'Times New Roman', Times, serif;
+ 
+}
+#hero{
+    color: white;
+    font-family: sans-serif;
+}
+h1{
+    text-transform: uppercase;
+    line-height: 0.9; /* Reduced line-height to reduce space between lines */
+    font-size: 5vw;
+    opacity: 0.7;
+    font-size: 9vw;
+    font-weight: 500;
+}
+#secondh1{
+    margin-left: 230px;
+}
+.blocktext{
+    width: fit-content;
+}
+.blocktext h5{
+    text-align: right;
+    font-size: 15px ;
+}
+.endheading h5{
+    margin-top: .5vw;
+    font-size: 2vw;
+    text-align: right;
+    text-decoration: none; /* Applies to <h5> elements within .endheading */
+}
+.endheading{
+    margin-top: 100px;
+    display: flex; /* Changed to flex */
+    align-items: center;
+    justify-content: space-between;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 5%;
+    gap:20px;
+}
+.endheading a{
+    text-decoration: none;
+    color: #fff;
+   ; /* Apply to inline elements */
+}
+.aend{
+    text-decoration: none;
+}
+
+    
+
+/* Add gradient background animation */
+#main {
+    background: linear-gradient(45deg, #000000, #1a1a1a, #333333);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Add hover effects on navigation links */
+#nav a{
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+#nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #fff;
+    transition: width 0.3s ease;
+}
+
+#nav a:hover::after {
+    width: 100%;
+}
+
+/* Add text glow effect */
+h1 {
+    text-shadow: 0 0 10px rgba(255,255,255,0.3);
+    animation: textGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes textGlow {
+    from {
+        text-shadow: 0 0 10px rgba(255,255,255,0.3);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(255,255,255,0.5),
+                     0 0 30px rgba(255,255,255,0.3);
+    }
+}
+
+/* Add floating animation to blocktext */
+.blocktext {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Add particle overlay */
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle at center, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+}
+#nav a:hover {
+    color: #00ff00;
+    transition: color 0.3s ease;
+}
+
+#nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #00ff00;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+#nav a:hover::after {
+    width: 100%;
+    background-color: #00ff00;
+}
+/* Add slide transition effect */
+.slide-transition {
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: all 0.8s ease-in-out;
+}
+
+.slide-transition.active {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* Add slide up transition */
+.slide-up {
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all 0.8s ease-out;
+}
+
+.slide-up.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Add slide down transition */
+.slide-down {
+    transform: translateY(-50px); 
+    opacity: 0;
+    transition: all 0.8s ease-out;
+}
+
+.slide-down.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Add slide right transition */
+.slide-right {
+    transform: translateX(100%);
+    opacity: 0; 
+    transition: all 0.8s ease-in-out;
+}
+
+.slide-right.active {
+    transform: translateX(0);
+    opacity: 1;
+}
